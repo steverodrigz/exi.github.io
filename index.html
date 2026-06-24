@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Exponential Individual Playbook — Live your best life, transform the human spirit, and better the world</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#15131F;
+    --ink-soft:#211E30;
+    --bone:#F5EFE6;
+    --paper:#FBF8F2;
+    --gold:#D98A3D;
+    --gold-bright:#E7A957;
+    --jade:#5B7E72;
+    --text:#2A2636;
+    --muted:#7A7468;
+    --line:#E3DACB;
+    --serif:'Spectral',Georgia,serif;
+    --sans:'Hanken Grotesk',system-ui,sans-serif;
+    --maxw:1140px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);background:var(--paper);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  .eyebrow{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+  .eyebrow.on-dark{color:var(--gold-bright)}
+  h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.12;letter-spacing:-.01em}
+
+  /* Buttons */
+  .btn{display:inline-flex;align-items:center;gap:.5em;font-family:var(--sans);font-weight:600;font-size:15px;padding:14px 26px;border-radius:2px;border:1.5px solid transparent;cursor:pointer;transition:transform .15s ease,background .2s ease,color .2s ease}
+  .btn:focus-visible{outline:2px solid var(--gold-bright);outline-offset:3px}
+  .btn-gold{background:var(--gold);color:#1c1304}
+  .btn-gold:hover{background:var(--gold-bright);transform:translateY(-1px)}
+  .btn-ghost{background:transparent;border-color:rgba(245,239,230,.35);color:var(--bone)}
+  .btn-ghost:hover{border-color:var(--gold-bright);color:var(--gold-bright)}
+  .btn-outline{background:transparent;border-color:var(--ink);color:var(--ink)}
+  .btn-outline:hover{background:var(--ink);color:var(--bone)}
+
+  /* Nav */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(21,19,31,.86);backdrop-filter:blur(10px);border-bottom:1px solid rgba(245,239,230,.08)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px}
+  .brand{display:flex;align-items:center;gap:10px;color:var(--bone);font-family:var(--serif);font-size:18px;font-weight:600;letter-spacing:.01em}
+  .brand .mark{width:22px;height:22px;flex:none}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{color:rgba(245,239,230,.78);font-size:14px;font-weight:500;transition:color .2s}
+  .nav-links a:hover{color:var(--gold-bright)}
+  .nav-cta{font-size:13px;padding:10px 18px}
+  .nav-toggle{display:none}
+
+  /* Hero */
+  .hero{position:relative;background:var(--ink);color:var(--bone);overflow:hidden}
+  .hero .curve{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:.9}
+  .hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:54px;align-items:center;padding:84px 0 92px}
+  .hero-foreword{margin-bottom:22px}
+  .hero h1{font-size:clamp(2.5rem,5.2vw,4rem);color:var(--bone)}
+  .hero h1 em{font-style:italic;color:var(--gold-bright)}
+  .hero-sub{margin:26px 0 32px;font-size:18px;line-height:1.7;color:rgba(245,239,230,.82);max-width:30em}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-buy{margin-top:30px;font-size:13px;color:rgba(245,239,230,.6)}
+  .hero-buy a{color:rgba(245,239,230,.85);border-bottom:1px solid rgba(217,138,61,.5);padding-bottom:1px;margin:0 2px;transition:color .2s}
+  .hero-buy a:hover{color:var(--gold-bright)}
+
+  /* Book cover mock */
+  .cover{position:relative;aspect-ratio:3/4.4;background:linear-gradient(165deg,#211E30,#15131F 60%);border:1px solid rgba(217,138,61,.4);border-radius:3px;box-shadow:0 30px 70px -28px rgba(0,0,0,.7);padding:32px 26px;display:flex;flex-direction:column;color:var(--bone)}
+  .cover .c-fore{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:rgba(245,239,230,.6)}
+  .cover .c-curve{margin:18px 0 22px}
+  .cover .c-title{font-family:var(--serif);font-size:30px;line-height:1.08;font-weight:600;margin-top:auto}
+  .cover .c-title b{color:var(--gold-bright);font-weight:600;font-style:italic}
+  .cover .c-sub{font-family:var(--serif);font-style:italic;font-size:15px;color:rgba(245,239,230,.78);margin-top:14px;line-height:1.4}
+  .cover .c-auth{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,239,230,.55);margin-top:22px;padding-top:16px;border-top:1px solid rgba(245,239,230,.14)}
+
+  /* Section base */
+  section{padding:92px 0}
+  .sec-head{max-width:40em}
+  .sec-head h2{font-size:clamp(1.9rem,3.6vw,2.7rem);margin:14px 0 0}
+
+  /* Thesis */
+  .thesis{background:var(--bone);text-align:center}
+  .thesis .inner{max-width:50em;margin:0 auto}
+  .thesis .lead{font-family:var(--serif);font-size:clamp(1.5rem,3vw,2.05rem);line-height:1.42;color:var(--ink);margin-top:24px}
+  .thesis .lead b{color:var(--gold);font-weight:500;font-style:italic}
+  .thesis .attr{margin-top:30px;font-size:14px;color:var(--muted);letter-spacing:.02em}
+  .divider-curve{margin:0 auto 6px;width:120px}
+
+  /* Bonus / lead capture */
+  .bonus{background:var(--ink);color:var(--bone)}
+  .bonus-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+  .bonus h2{color:var(--bone);font-size:clamp(1.9rem,3.6vw,2.7rem);margin:14px 0 18px}
+  .bonus p.intro{color:rgba(245,239,230,.78);font-size:17px;line-height:1.7;max-width:30em}
+  .perks{list-style:none;margin:30px 0 0;display:grid;gap:16px}
+  .perks li{display:flex;gap:14px;align-items:flex-start;font-size:15px;color:rgba(245,239,230,.9)}
+  .perks .pk{width:30px;height:30px;flex:none;border:1px solid rgba(217,138,61,.5);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold-bright);font-size:14px}
+  .perks b{display:block;font-weight:600;color:var(--bone)}
+  .perks span{color:rgba(245,239,230,.62);font-size:13.5px}
+  .capture{background:var(--ink-soft);border:1px solid rgba(245,239,230,.1);border-radius:6px;padding:34px}
+  .capture .step{font-size:13px;color:var(--gold-bright);font-weight:600;letter-spacing:.04em}
+  .capture h3{font-family:var(--serif);font-size:24px;color:var(--bone);margin:8px 0 6px;font-weight:500}
+  .capture p{font-size:14px;color:rgba(245,239,230,.62);margin-bottom:20px}
+  .capture label{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:rgba(245,239,230,.55);margin:14px 0 7px}
+  .capture input{width:100%;padding:13px 15px;border-radius:3px;border:1px solid rgba(245,239,230,.18);background:#15131F;color:var(--bone);font-family:var(--sans);font-size:15px}
+  .capture input:focus{outline:none;border-color:var(--gold)}
+  .capture .btn{width:100%;justify-content:center;margin-top:22px}
+  .capture .fine{font-size:12px;color:rgba(245,239,230,.4);margin-top:14px;text-align:center}
+  .capture .done{display:none;font-family:var(--serif);font-style:italic;font-size:18px;color:var(--gold-bright);text-align:center;padding:30px 10px}
+
+  /* Praise */
+  .praise{background:var(--paper)}
+  .praise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px}
+  .quote{background:#fff;border:1px solid var(--line);border-radius:6px;padding:30px 28px;display:flex;flex-direction:column}
+  .quote .qmark{font-family:var(--serif);font-size:46px;line-height:.6;color:var(--gold);height:24px}
+  .quote p{font-family:var(--serif);font-size:18px;line-height:1.5;color:var(--ink);margin:10px 0 22px}
+  .quote .who{margin-top:auto;display:flex;align-items:center;gap:12px}
+  .quote .ava{width:38px;height:38px;border-radius:50%;background:var(--bone);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:600;color:var(--jade);font-size:15px}
+  .quote .who b{display:block;font-size:14px;font-weight:600}
+  .quote .who span{font-size:12.5px;color:var(--muted)}
+
+  /* Journey */
+  .journey{background:var(--bone)}
+  .ch-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 56px;margin-top:46px}
+  .ch{display:grid;grid-template-columns:auto 1fr;gap:18px;padding:20px 0;border-bottom:1px solid var(--line)}
+  .ch .num{font-family:var(--serif);font-size:15px;color:var(--gold);font-weight:600;padding-top:3px;min-width:24px}
+  .ch h4{font-family:var(--serif);font-size:19px;font-weight:500;color:var(--ink);line-height:1.25}
+  .ch p{font-size:13.5px;color:var(--muted);margin-top:3px}
+
+  /* Principles */
+  .principles{background:var(--ink);color:var(--bone)}
+  .principles h2{color:var(--bone)}
+  .pr-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 40px;margin-top:44px}
+  .pr{display:flex;gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px solid rgba(245,239,230,.1)}
+  .pr .pn{font-family:var(--serif);font-size:14px;color:var(--gold-bright);min-width:26px}
+  .pr b{font-weight:500;font-family:var(--serif);font-size:18px;color:var(--bone)}
+  .pr i{display:block;font-style:normal;font-size:13.5px;color:rgba(245,239,230,.6);font-family:var(--sans);margin-top:2px}
+
+  /* About */
+  .about{background:var(--paper)}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+  .about p{font-size:16.5px;line-height:1.75;color:var(--text);margin-top:18px}
+  .moonshot{background:var(--bone);border-left:3px solid var(--gold);padding:26px 28px;margin-top:30px;border-radius:0 4px 4px 0}
+  .moonshot .big{font-family:var(--serif);font-size:30px;color:var(--ink);font-weight:600}
+  .moonshot .lbl{font-size:14px;color:var(--muted);margin-top:6px}
+  .author-card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:30px}
+  .author-card .role{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:600}
+  .author-card h3{font-family:var(--serif);font-size:23px;margin:8px 0 0;font-weight:500}
+  .author-card .bio{font-size:15px;line-height:1.7;color:var(--text);margin-top:14px}
+  .author-card .link{display:inline-flex;align-items:center;gap:7px;margin-top:18px;font-weight:600;font-size:14px;color:var(--jade);border-bottom:1.5px solid var(--jade);padding-bottom:2px}
+  .author-card .link:hover{color:var(--ink);border-color:var(--ink)}
+  .co-note{font-size:13px;color:var(--muted);margin-top:18px;line-height:1.6}
+
+  /* Newsletter */
+  .news{background:var(--ink);color:var(--bone);text-align:center}
+  .news .inner{max-width:38em;margin:0 auto}
+  .news h2{color:var(--bone);font-size:clamp(1.8rem,3.4vw,2.5rem);margin-top:14px}
+  .news p{color:rgba(245,239,230,.72);font-size:16px;margin:18px 0 28px}
+  .news-form{display:flex;gap:10px;max-width:440px;margin:0 auto}
+  .news-form input{flex:1;padding:14px 16px;border-radius:3px;border:1px solid rgba(245,239,230,.2);background:var(--ink-soft);color:var(--bone);font-family:var(--sans);font-size:15px}
+  .news-form input:focus{outline:none;border-color:var(--gold)}
+
+  /* Footer */
+  footer.foot{background:#0F0E17;color:rgba(245,239,230,.6);padding:54px 0 40px}
+  .foot-top{display:flex;justify-content:space-between;align-items:flex-start;gap:30px;flex-wrap:wrap;padding-bottom:30px;border-bottom:1px solid rgba(245,239,230,.08)}
+  .foot .brand{margin-bottom:6px}
+  .foot-tag{font-size:13.5px;max-width:24em;line-height:1.6}
+  .foot-links{display:flex;gap:26px;flex-wrap:wrap;font-size:14px}
+  .foot-links a:hover{color:var(--gold-bright)}
+  .foot-bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;margin-top:26px;font-size:12.5px;color:rgba(245,239,230,.4)}
+  .foot-bottom a{border-bottom:1px solid rgba(217,138,61,.4)}
+
+  @media (max-width:880px){
+    .nav-links{display:none}
+    .hero-grid,.bonus-grid,.about-grid{grid-template-columns:1fr;gap:44px}
+    .cover{max-width:300px;margin:0 auto}
+    .praise-grid{grid-template-columns:1fr}
+    .ch-grid,.pr-grid{grid-template-columns:1fr;gap:0}
+    section{padding:64px 0}
+    .news-form{flex-direction:column}
+  }
+  @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto !important;transition:none !important}}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="brand">
+      <svg class="mark" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21C7 21 9 3 21 3" stroke="#E7A957" stroke-width="2" stroke-linecap="round"/></svg>
+      ExI Playbook
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#thesis">The idea</a>
+      <a href="#journey">The journey</a>
+      <a href="#principles">Principles</a>
+      <a href="#about">Authors</a>
+    </nav>
+    <a href="#bonus" class="btn btn-gold nav-cta">Get the book</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero" id="hero" style="padding:0">
+    <svg class="curve" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <path d="M-50 720 C 300 715, 560 640, 760 420 S 1020 90, 1280 -40" fill="none" stroke="#D98A3D" stroke-width="1.5" opacity="0.5"/>
+      <path d="M-50 760 C 360 752, 640 690, 850 470 S 1120 130, 1320 0" fill="none" stroke="#E7A957" stroke-width="1" opacity="0.28"/>
+      <path d="M-50 690 C 250 686, 480 600, 690 360 S 960 40, 1240 -90" fill="none" stroke="#5B7E72" stroke-width="1" opacity="0.22"/>
+    </svg>
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <div class="hero-foreword eyebrow on-dark">Foreword by Salim Ismail &middot; Founder, OpenExO</div>
+          <h1>Live your best life, transform the human spirit, and <em>better the world</em>.</h1>
+          <p class="hero-sub">The companion playbook for becoming an Exponential Individual — someone whose impact and fulfillment run far ahead of the effort, because their life is aligned to purpose. Theory, practice, and a path you can start from wherever you are.</p>
+          <div class="hero-actions">
+            <a href="#bonus" class="btn btn-gold">Get the book &amp; bonuses</a>
+            <a href="#thesis" class="btn btn-ghost">What's inside</a>
+          </div>
+          <p class="hero-buy">Available as <a href="#bonus">Hardcover</a>, <a href="#bonus">Paperback</a>, and <a href="#bonus">Kindle</a>.</p>
+        </div>
+        <div class="cover" role="img" aria-label="The Exponential Individual Playbook, book cover">
+          <div class="c-fore">Foreword by Salim Ismail</div>
+          <svg class="c-curve" width="90" height="40" viewBox="0 0 90 40" fill="none" aria-hidden="true"><path d="M2 38C20 37 34 22 88 2" stroke="#E7A957" stroke-width="2" stroke-linecap="round"/></svg>
+          <div class="c-title">The Exponential <b>Individual</b> Playbook</div>
+          <div class="c-sub">Live your best life, transform the human spirit, and better the world</div>
+          <div class="c-auth">Co-authored by the people behind ExI</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THESIS -->
+  <section class="thesis" id="thesis">
+    <div class="wrap inner">
+      <svg class="divider-curve" width="120" height="26" viewBox="0 0 120 26" fill="none" aria-hidden="true"><path d="M4 24C30 23 46 10 116 2" stroke="#D98A3D" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <div class="eyebrow">Who is an Exponential Individual?</div>
+      <p class="lead">Someone whose impact for good, and level of fulfillment, is <b>disproportionately large</b> compared to the effort and resources they put in — because their thoughts, habits, and actions are aligned to purpose. They are people who show up in a <b>new way of being</b>.</p>
+      <p class="attr">— From Chapter 2, The Exponential Individual Playbook</p>
+    </div>
+  </section>
+
+  <!-- BONUS / LEAD CAPTURE -->
+  <section class="bonus" id="bonus">
+    <div class="wrap bonus-grid">
+      <div>
+        <div class="eyebrow on-dark">Get the book, then unlock</div>
+        <h2>Exclusive bonuses for readers</h2>
+        <p class="intro">The book is the start. Order your copy, then claim the companion materials built to help you put the work into practice — and join the community walking the same path.</p>
+        <ul class="perks">
+          <li><span class="pk">&#9733;</span><div><b>The Companion Workbook</b><span>Exercises and reflections from all twelve chapters, in one printable guide.</span></div></li>
+          <li><span class="pk">&#9678;</span><div><b>The 10 ExI Principles</b><span>The shared code of the initiative, as a standalone reference card.</span></div></li>
+          <li><span class="pk">&#9788;</span><div><b>Live transformation sessions</b><span>Member-only calls with co-authors and contributing guides.</span></div></li>
+          <li><span class="pk">&#9826;</span><div><b>The ExI community</b><span>A global circle of builders practicing a new way of being.</span></div></li>
+        </ul>
+      </div>
+      <div class="capture">
+        <div class="step">Step 2 — after you order</div>
+        <h3>Claim your bonuses</h3>
+        <p>Enter your name and email, and we'll send your reader bonuses plus access to the community.</p>
+        <form id="bonusForm" novalidate>
+          <label for="bn">First name</label>
+          <input id="bn" type="text" placeholder="Your name" autocomplete="given-name">
+          <label for="be">Email</label>
+          <input id="be" type="email" placeholder="you@example.com" autocomplete="email">
+          <button class="btn btn-gold" type="submit">Send me the bonuses</button>
+          <p class="fine">No spam. A new way of being, not a busier inbox.</p>
+        </form>
+        <div class="done" id="bonusDone">You're in. Check your inbox for your reader bonuses. ✦</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRAISE -->
+  <section class="praise" id="praise">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Praise from readers around the world</div>
+        <h2>What readers are saying</h2>
+      </div>
+      <div class="praise-grid">
+        <div class="quote"><div class="qmark">&ldquo;</div><p>It guides us without caring, and induces without determining.</p><div class="who"><div class="ava">MG</div><div><b>Marta Gucciardi</b><span>Brazil</span></div></div></div>
+        <div class="quote"><div class="qmark">&ldquo;</div><p>An important resource for anyone seeking to live a meaningful life.</p><div class="who"><div class="ava">SK</div><div><b>Sophie Krantz</b><span>Australia</span></div></div></div>
+        <div class="quote"><div class="qmark">&ldquo;</div><p>Much more than self-help — a path to real transformation.</p><div class="who"><div class="ava">SE</div><div><b>Stephen Earnhart</b><span>Switzerland</span></div></div></div>
+        <div class="quote"><div class="qmark">&ldquo;</div><p>These exponential potentials are there by design — we only need to cultivate them.</p><div class="who"><div class="ava">PE</div><div><b>Paul Epping</b><span>Netherlands</span></div></div></div>
+        <div class="quote"><div class="qmark">&ldquo;</div><p>Thorough, easy to read, and genuinely able to change your life.</p><div class="who"><div class="ava">RG</div><div><b>Richard Gomez</b><span>Spain</span></div></div></div>
+        <div class="quote"><div class="qmark">&ldquo;</div><p>The journey needed to make not just organizations, but humanity, transform.</p><div class="who"><div class="ava">SI</div><div><b>Salim Ismail</b><span>Foreword · OpenExO</span></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOURNEY -->
+  <section class="journey" id="journey">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">The twelve-chapter map</div>
+        <h2>The journey inside</h2>
+      </div>
+      <div class="ch-grid">
+        <div class="ch"><div class="num">01</div><div><h4>The increasing need for Exponential Individuals</h4><p>Why this moment asks more of each of us.</p></div></div>
+        <div class="ch"><div class="num">02</div><div><h4>Who is an Exponential Individual?</h4><p>The mindset and the heart-set behind a new way of being.</p></div></div>
+        <div class="ch"><div class="num">03</div><div><h4>Life, death, and consciousness</h4><p>The ground beneath any real change.</p></div></div>
+        <div class="ch"><div class="num">04</div><div><h4>Purpose</h4><p>The compass found through deep self-awareness.</p></div></div>
+        <div class="ch"><div class="num">05</div><div><h4>Where are you?</h4><p>An honest reading of your starting point.</p></div></div>
+        <div class="ch"><div class="num">06</div><div><h4>Who do you want to become?</h4><p>Naming the version of you worth the work.</p></div></div>
+        <div class="ch"><div class="num">07</div><div><h4>Why do people really change?</h4><p>The mechanism underneath lasting transformation.</p></div></div>
+        <div class="ch"><div class="num">08</div><div><h4>How to get there</h4><p>The practical path from intention to action.</p></div></div>
+        <div class="ch"><div class="num">09</div><div><h4>Developing and maintaining habits</h4><p>Turning practice into a way of living.</p></div></div>
+        <div class="ch"><div class="num">10</div><div><h4>Adjustment and reconsideration</h4><p>The feedback loop that keeps you aligned.</p></div></div>
+        <div class="ch"><div class="num">11</div><div><h4>What's next for the greater good?</h4><p>Carrying the work beyond the self.</p></div></div>
+        <div class="ch"><div class="num">12</div><div><h4>Dare to live</h4><p>The call to step fully into your life.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRINCIPLES -->
+  <section class="principles" id="principles">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow on-dark">The shared code</div>
+        <h2>The ten ExI principles</h2>
+      </div>
+      <div class="pr-grid">
+        <div class="pr"><span class="pn">01</span><div><b>Freedom of inner-exploration</b><i>A no-teach, no-preach zone for ancient wisdom and modern science alike.</i></div></div>
+        <div class="pr"><span class="pn">02</span><div><b>Purposeful action</b><i>Stillness, reflection, and gratitude, expressed through what you do.</i></div></div>
+        <div class="pr"><span class="pn">03</span><div><b>Preservation of nature</b><i>Solutions mindful of the climate and the world they touch.</i></div></div>
+        <div class="pr"><span class="pn">04</span><div><b>Mutual respect for all paths</b><i>Integrity, openness, and acceptance of diverse values.</i></div></div>
+        <div class="pr"><span class="pn">05</span><div><b>Active listening</b><i>Room for the quietest voice with the boldest idea.</i></div></div>
+        <div class="pr"><span class="pn">06</span><div><b>An entrepreneurial spirit</b><i>Meet every challenge hungry for a solution.</i></div></div>
+        <div class="pr"><span class="pn">07</span><div><b>Aligned action and accountability</b><i>Hold yourself to your commitments — and own it when you can't.</i></div></div>
+        <div class="pr"><span class="pn">08</span><div><b>Inclusion, education, expansion</b><i>Everyone is invited to the work.</i></div></div>
+        <div class="pr"><span class="pn">09</span><div><b>Radical transparency</b><i>Trust built on honesty, empathy, and compassion.</i></div></div>
+        <div class="pr"><span class="pn">10</span><div><b>Assume the best, stay discerning</b><i>Generous by default, clear-eyed throughout.</i></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div>
+        <div class="eyebrow">About the initiative</div>
+        <h2 class="sec-head" style="font-size:clamp(1.9rem,3.6vw,2.7rem);margin-top:12px">Exponential Individuals</h2>
+        <p>ExI is a group of global leaders, published authors, and human-transformation enthusiasts helping people evolve their way of being — toward authenticity, community care, deep healing, and a sense of shared responsibility for the future.</p>
+        <p>Playing at the intersection of exponential technology and elevating consciousness, ExI serves as a catalyst to make self-awareness, human optimization, and collective betterment universal.</p>
+        <div class="moonshot">
+          <div class="big">1 billion people by 2040</div>
+          <div class="lbl">The ExI moonshot — helping a billion individuals harness the power within to live more fulfilled lives.</div>
+        </div>
+      </div>
+      <div class="author-card">
+        <div class="role">Contributing co-author</div>
+        <h3>Steven A. Rodríguez</h3>
+        <p class="bio">A flywheel builder who turns chaos into momentum. Steven supports founders across the global entrepreneurship ecosystem and writes on exponential systems, AI operations, and human potential — one of the voices behind the ExI Playbook.</p>
+        <a href="https://www.stevenarodriguez.com?utm_source=exponentialindividuals.io" class="link">Visit stevenarodriguez.com &rarr;</a>
+        <p class="co-note">The Exponential Individual Playbook is a collaborative work, co-authored by the ExI community with a foreword by <a href="https://salimismail.com?utm_source=exponentialindividuals.io" target="_blank">Salim Ismail</a>, founder of <a href="https://www.openexo.com?a=steven-rodriguez" target="_blank">OpenExO</a> and author of <em>Exponential Organizations</em>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="news" id="newsletter">
+    <div class="wrap inner">
+      <div class="eyebrow on-dark">The newsletter</div>
+      <h2>A new way of being, in your inbox</h2>
+      <p>Occasional notes on purpose, habits, and human transformation — drawn from the playbook and the people living it.</p>
+      <form class="news-form" id="newsForm" novalidate>
+        <input type="email" placeholder="you@example.com" aria-label="Email address" autocomplete="email">
+        <button class="btn btn-gold" type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="brand"><svg class="mark" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 21C7 21 9 3 21 3" stroke="#E7A957" stroke-width="2" stroke-linecap="round"/></svg> ExI Playbook</div>
+        <p class="foot-tag">Live your best life, transform the human spirit, and better the world.</p>
+      </div>
+      <nav class="foot-links" aria-label="Footer">
+        <a href="#thesis">The idea</a>
+        <a href="#bonus">Get the book</a>
+        <a href="#journey">The journey</a>
+        <a href="#principles">Principles</a>
+        <a href="#newsletter">Newsletter</a>
+        <a href="https://www.stevenarodriguez.com?utm_source=exponentialindividuals.io" target="_blank">stevenarodriguez.com</a>
+      </nav>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2021–2026 Exponential Individuals. Foreword by Salim Ismail.</span>
+      <span>As an Amazon Associate, qualifying purchases earn a commission. <a href="#">Privacy</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function confirmForm(id, doneId){
+    var f=document.getElementById(id); if(!f)return;
+    f.addEventListener('submit',function(e){
+      e.preventDefault();
+      if(doneId){var d=document.getElementById(doneId);f.style.display='none';d.style.display='block';}
+      else{var b=f.querySelector('button');b.textContent='Subscribed ✦';b.disabled=true;}
+    });
+  }
+  confirmForm('bonusForm','bonusDone');
+  confirmForm('newsForm',null);
+</script>
+</body>
+</html>
